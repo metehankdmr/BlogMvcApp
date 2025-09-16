@@ -1,0 +1,59 @@
+﻿@model BlogMvcApp.Models.BlogPost
+
+<div class="container mt-4">
+    <h1>Yeni Yazı Ekle</h1>
+    <form asp-action="Create" method="post">
+        <div class="mb-3">
+            <label class="form-label">Başlık</label>
+            <input asp-for="Title" class="form-control" placeholder="Yazınızın başlığını girin" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">İçerik</label>
+            <textarea asp-for="Content" id="contentEditor" class="form-control" rows="10" placeholder="Yazınızın içeriğini buraya yazın..."></textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-success">Kaydet</button>
+            <a asp-action="Index" class="btn btn-secondary">İptal</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#contentEditor'), {
+                toolbar: {
+                    items: [
+                        'heading', '|',
+                        'bold', 'italic', 'underline', '|',
+                        'bulletedList', 'numberedList', '|',
+                        'outdent', 'indent', '|',
+                        'blockQuote', 'insertTable', '|',
+                        'undo', 'redo', '|',
+                        'link', '|',
+                        'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', '|',
+                        'alignment', '|',
+                        'specialCharacters', 'horizontalLine'
+                    ]
+                },
+                language: 'tr',
+                table: {
+                    contentToolbar: [
+                        'tableColumn',
+                        'tableRow',
+                        'mergeTableCells'
+                    ]
+                }
+            })
+            .then(editor => {
+                console.log('CKEditor yüklendi:', editor);
+            })
+            .catch(error => {
+                console.error('CKEditor yüklenirken hata:', error);
+            });
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
