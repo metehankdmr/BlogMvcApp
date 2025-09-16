@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G0MxeXl+t9k=",
+  "dgSpecHash": "92pYAJ7Us/g=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mete\\source\\repos\\BlogMvcApp\\BlogMvcApp\\BlogMvcApp.csproj",
+  "projectFilePath": "C:\\Users\\Mete\\BlogMvcApp\\BlogMvcApp\\BlogMvcApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mete\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Mete\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

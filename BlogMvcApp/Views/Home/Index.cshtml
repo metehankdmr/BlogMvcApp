@@ -19,8 +19,25 @@
                                 @Html.Raw(post.Content)
                             </div>
                         </div>
-                        <div class="card-footer text-muted">
-                            <small>@post.CreatedAt.ToString("dd.MM.yyyy HH:mm")</small>
+                        <div class="card-footer text-muted d-flex justify-content-between align-items-center">
+                            <div>
+                                <small>@post.CreatedAt.ToString("dd.MM.yyyy HH:mm")</small>
+                                <br>
+                                <small class="text-primary"><strong>@post.AuthorName</strong></small>
+                            </div>
+                            @{
+                                var currentUserId = int.Parse(Context.Session.GetString("UserId") ?? "0");
+                            }
+                            @if (post.AuthorId == currentUserId)
+                            {
+                                <form asp-action="Delete" method="post" style="display: inline;">
+                                    <input type="hidden" name="id" value="@post.Id" />
+                                    <button type="submit" class="btn btn-danger btn-sm" 
+                                            onclick="return confirm('Bu yazıyı silmek istediğinizden emin misiniz?')">
+                                        <i class="fas fa-trash"></i> Sil
+                                    </button>
+                                </form>
+                            }
                         </div>
                     </div>
                 </div>

@@ -50,11 +50,37 @@ namespace BlogMvcApp.Controllers
             if (ModelState.IsValid)
             {
                 post.CreatedAt = DateTime.Now;
+                post.AuthorId = int.Parse(HttpContext.Session.GetString("UserId")!);
+                post.AuthorName = HttpContext.Session.GetString("Name")!;
                 _context.BlogPosts.Add(post);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(post);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            // Authentication kontrolü
+            if (HttpContext.Session.GetString("UserId") == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
+
+            var post = _context.BlogPosts.Find(id);
+            if (post != null)
+            {
+                // Sadece yazının sahibi silebilir
+                var currentUserId = int.Parse(HttpContext.Session.GetString("UserId")!);
+                if (post.AuthorId == currentUserId)
+                {
+                    _context.BlogPosts.Remove(post);
+                    _context.SaveChanges();
+                }
+            }
+            
+            return RedirectToAction("Index");
         }
     }
 }

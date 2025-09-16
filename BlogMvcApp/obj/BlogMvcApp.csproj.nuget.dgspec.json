@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mete\\source\\repos\\BlogMvcApp\\BlogMvcApp\\BlogMvcApp.csproj": {}
+    "C:\\Users\\Mete\\BlogMvcApp\\BlogMvcApp\\BlogMvcApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mete\\source\\repos\\BlogMvcApp\\BlogMvcApp\\BlogMvcApp.csproj": {
+    "C:\\Users\\Mete\\BlogMvcApp\\BlogMvcApp\\BlogMvcApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mete\\source\\repos\\BlogMvcApp\\BlogMvcApp\\BlogMvcApp.csproj",
+        "projectUniqueName": "C:\\Users\\Mete\\BlogMvcApp\\BlogMvcApp\\BlogMvcApp.csproj",
         "projectName": "BlogMvcApp",
-        "projectPath": "C:\\Users\\Mete\\source\\repos\\BlogMvcApp\\BlogMvcApp\\BlogMvcApp.csproj",
+        "projectPath": "C:\\Users\\Mete\\BlogMvcApp\\BlogMvcApp\\BlogMvcApp.csproj",
         "packagesPath": "C:\\Users\\Mete\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mete\\source\\repos\\BlogMvcApp\\BlogMvcApp\\obj\\",
+        "outputPath": "C:\\Users\\Mete\\BlogMvcApp\\BlogMvcApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
